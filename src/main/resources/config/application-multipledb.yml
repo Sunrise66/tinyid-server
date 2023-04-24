@@ -1,0 +1,14 @@
+datasource:
+  tinyid:
+    names: primary,secondary
+    type: com.alibaba.druid.pool.DruidDataSource
+    primary:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://${PRIMARY_DB_HOST}:${PRIMARY_DB_PORT:3306}/${PRIMARY_DB_NAME:tiny-id}?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8
+      username: ${PRIMARY_DB_USER}
+      password: ${PRIMARY_DB_PWD}
+    secondary:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://${SECONDARY_DB_HOST}:${SECONDARY_DB_PORT:3306}/${SECONDARY_DB_NAME:tiny-id}?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8
+      username: ${SECONDARY_DB_USER}
+      password: ${SECONDARY_DB_PWD}

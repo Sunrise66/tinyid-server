@@ -1,0 +1,15 @@
+server:
+  port: 9999
+  servlet:
+    context-path: /
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  profiles:
+    active: ${ACTIVE_PROFILE:singledb}
+batch:
+  size:
+    max: 10000
+logging:
+ config: classpath:log4j2.xml
+
